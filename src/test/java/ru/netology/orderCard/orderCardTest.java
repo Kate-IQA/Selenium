@@ -19,7 +19,7 @@ public class orderCardTest {
 
     @BeforeAll
       static void setUpAll() {
-    setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         }
 
     @BeforeEach
