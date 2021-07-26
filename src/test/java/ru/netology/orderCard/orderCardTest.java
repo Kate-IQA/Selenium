@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import static java.lang.System.setProperty;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.shadow.com.univocity.parsers.conversions.Conversions.trim;
 
@@ -18,7 +19,7 @@ public class orderCardTest {
 
     @BeforeAll
       static void setUpAll() {
-    WebDriverManager.chromedriver().setup();
+    setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
         }
 
     @BeforeEach
@@ -53,7 +54,7 @@ public class orderCardTest {
 
     @Test
     void shouldFillNameWrong() {
-        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Ghrtert");
+        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Alarm");
         driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79139469364");
         driver.findElement(By.cssSelector(".checkbox__box")).click();
         driver.findElement(By.cssSelector("button")).click();
@@ -74,7 +75,7 @@ public class orderCardTest {
     @Test
     void shouldFillPhoneWrong() {
         driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Дегтярева Екатерина");
-        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79139469364");
+        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+7913946934");
         driver.findElement(By.cssSelector(".checkbox__box")).click();
         driver.findElement(By.cssSelector("button")).click();
         String expected = "Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.";
