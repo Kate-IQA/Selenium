@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/fmhh37pks6w2e6tx?svg=true)](https://ci.appveyor.com/project/Kate-IQA/selenium)
