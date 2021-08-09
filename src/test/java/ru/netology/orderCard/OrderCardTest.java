@@ -39,11 +39,6 @@ public class OrderCardTest {
     }
 
     @Test
-    void shouldTestSomething() {
-        driver.get("http://localhost:9999");
-    }
-
-    @Test
     void shouldFillForm() {
         driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Дегтярева Екатерина");
         driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79139469364");
