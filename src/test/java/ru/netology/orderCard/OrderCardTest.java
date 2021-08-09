@@ -86,7 +86,17 @@ public class OrderCardTest {
         assertEquals(expected, actual);
 
     }
+  @Test
+    void shouldPhoneEmpty() {
+        driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Дегтярева Екатерина");
+        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("");
+        driver.findElement(By.cssSelector(".checkbox__box")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String expected = "Поле обязательно для заполнения";
+        String actual = driver.findElement(By.cssSelector(".input_invalid .input__sub")).getText().trim();
+        assertEquals(expected, actual);
 
+    }
     @Test
     void shouldNotCheckBox() {
         driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("Дегтярева Екатерина");
